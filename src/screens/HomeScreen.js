@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View } from "react-native";
-import StoryBooks from "../containers/StoryBooks";
-import HomeHero from "../components/HomeHero";
+import { StyleSheet, Text, View } from 'react-native';
+import StoryBooks from '../containers/StoryBooks';
+import HomeHero from '../components/HomeHero';
 
 function HomeScreen() {
   return (
@@ -17,10 +17,10 @@ function HomeScreen() {
 
 const styles = StyleSheet.create({
   root: {
-    flexDirection: "column",
+    flexDirection: 'column',
     flex: 1,
-    width: "100%",
-    backgroundColor: "#1E1E1E",
+    width: '100%',
+    backgroundColor: '#1E1E1E',
   },
   hero: {
     flex: 1,
@@ -28,10 +28,10 @@ const styles = StyleSheet.create({
   },
   storyBooks: {
     flex: 4,
-    flexDirection: "column",
-    marginRight: "auto",
-    marginLeft: "auto",
-    width: "100%",
+    flexDirection: 'column',
+    marginRight: 'auto',
+    marginLeft: 'auto',
+    width: '100%',
   },
 });
 
