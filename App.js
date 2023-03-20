@@ -1,10 +1,10 @@
 import { StyleSheet, View } from 'react-native';
-import HomeScreen from './src/screens/HomeScreen.js';
+import MainScreen from './src/screens/MainScreen.js';
 
 const App = () => {
   return (
     <View style={styles.container}>
-      <HomeScreen />
+      <MainScreen />
     </View>
   );
 };

@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View } from 'react-native';
 import StoryBooks from '../containers/StoryBooks';
-import HomeHero from '../components/HomeHero';
+import HomeHero from '../containers/HomeHero';
 
-function HomeScreen() {
+function MainScreen() {
   return (
     <View style={styles.root}>
       <View style={styles.hero}>
@@ -24,10 +24,10 @@ const styles = StyleSheet.create({
   },
   hero: {
     flex: 1,
-    marginTop: 25,
+    marginTop: '12%',
   },
   storyBooks: {
-    flex: 4,
+    flex: 6,
     flexDirection: 'column',
     marginRight: 'auto',
     marginLeft: 'auto',
@@ -35,4 +35,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default MainScreen;
