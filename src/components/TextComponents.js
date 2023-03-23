@@ -16,8 +16,8 @@ const styles = StyleSheet.create({
   },
   description: {
     fontSize: 14,
-    lineHeight: 20, // 1.43 line height
-    fontFamily: 'System', // veya 'San Francisco', 'Arial' gibi bir font kullanılabilir,
+    lineHeight: 20,
+    fontFamily: 'System',
     color: 'white',
   },
 });
