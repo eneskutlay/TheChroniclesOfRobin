@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import StoryBooks from '../containers/StoryBooks';
 import HomeHero from '../containers/HomeHero';
 
@@ -17,21 +17,20 @@ function MainScreen() {
 
 const styles = StyleSheet.create({
   root: {
-    flexDirection: 'column',
     flex: 1,
-    width: '100%',
     backgroundColor: '#1E1E1E',
+    width: '100%',
+    height: 'auto',
   },
   hero: {
     flex: 1,
-    marginTop: '12%',
+    marginTop: '15%',
   },
   storyBooks: {
     flex: 6,
-    flexDirection: 'column',
-    marginRight: 'auto',
-    marginLeft: 'auto',
-    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: '8%',
   },
 });
 

@@ -4,22 +4,22 @@ import { Header, Description } from '../components/TextComponents';
 function HomeHero() {
   return (
     // data or static? && props?
-    <View style={styles.root}>
+    <View style={styles.gameWrite}>
       <Header>Story Books</Header>
       <Description>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies, nisl et ultricies
         lacinia, nisl nisl aliquet nisl, et aliquet nisl nisl sit amet nisl. Donec ultricies, nisl
-        et ultricies lacinia, nisl nisl aliquet nisl, et aliquet nisl nisl sit amet nisl.
+        et ultricies lacinia, nisl nisl aliquet nisl, et aliquet nisl nisl sit amet nisl aasdas enes
+        sd.
       </Description>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  root: {
+  gameWrite: {
     flex: 1,
-    width: '92%',
-    marginTop: 20,
+    maxWidth: '92%',
     alignSelf: 'center',
     gap: 10,
   },

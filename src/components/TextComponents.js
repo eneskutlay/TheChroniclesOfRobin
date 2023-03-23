@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 
-let Header = ({ children }) => {
+const Header = ({ children }) => {
   return <Text style={styles.header}>{children}</Text>;
 };
 
-let Description = ({ children }) => {
+const Description = ({ children }) => {
   return <Text style={styles.description}>{children}</Text>;
 };
 
@@ -15,7 +15,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   description: {
-    fontSize: 11,
+    fontSize: 14,
+    lineHeight: 20, // 1.43 line height
+    fontFamily: 'System', // veya 'San Francisco', 'Arial' gibi bir font kullanılabilir,
     color: 'white',
   },
 });

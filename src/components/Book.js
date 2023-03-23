@@ -1,65 +1,76 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Pressable } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
-function Book(props) {
-  const { stories } = props;
-
-  return (
-    <View style={styles.root}>
-      {stories.map((story) => (
-        <View style={styles.book} key={story._id}>
-          <View style={styles.bookCover}>
-            <View style={styles.bookInside}>
-              <Text style={styles.title}>{story.storyName}</Text>
-              <Text style={styles.storyAuth}>Auth: Enes</Text>
-            </View>
+function Book({ stories }) {
+  const onBookPress = () => {
+    console.log('Book pressed');
+  };
+  const renderStories = () => {
+    return stories.map((story) => (
+      <Pressable style={styles.book} key={story._id} onPress={() => onBookPress()}>
+        <LinearGradient
+          style={styles.bookCover}
+          colors={['#005024', '#00753A']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+        >
+          <View style={styles.bookInside}>
+            <Text style={styles.title}>{story.storyName}</Text>
           </View>
-          <View>
-            <Text style={styles.storyDesc}>{story.storyDesc}</Text>
-          </View>
+        </LinearGradient>
+        <View style={styles.storyDescContainer}>
+          <Text style={styles.storyDesc}>{story.storyDesc}</Text>
         </View>
-      ))}
-    </View>
-  );
+      </Pressable>
+    ));
+  };
+
+  return <View style={styles.root}>{renderStories()}</View>;
 }
 
 const styles = StyleSheet.create({
   root: {
+    flex: 1,
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginTop: 25,
   },
   book: {
     width: '31%',
+    marginBottom: 6,
   },
   bookCover: {
     height: 160,
-    marginTop: 10,
-    backgroundColor: '#005024',
+    borderRadius: 8,
+    overflow: 'hidden',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   bookInside: {
-    // mybe use <LinearGradient /> package. https://docs.expo.io/versions/latest/sdk/linear-gradient/
-    borderWidth: 1,
-    borderColor: '#00753A',
-    borderRadius: 2,
-    width: '95%',
-    height: '95%',
-    alignSelf: 'center',
-    margin: '4%',
-    padding: '4%',
+    width: '100%',
+    height: '100%',
+    padding: '5%',
+    justifyContent: 'flex-end',
   },
   title: {
-    fontSize: 10,
+    fontSize: 12,
+    fontWeight: 'bold',
     color: 'white',
   },
-  storyAuth: {
-    fontSize: 10,
-    color: 'white',
+  storyDescContainer: {
+    padding: 2,
   },
   storyDesc: {
-    fontSize: 9,
-    color: 'white',
-    marginTop: 2,
-    marginBottom: 10,
+    fontSize: 12,
+    color: 'gray',
   },
 });
 
