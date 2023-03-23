@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { Header, Description } from '../components/TextComponents';
 
-function HomeHero() {
+function AdventureIntro() {
   return (
     // data or static? && props?
     <View style={styles.gameWrite}>
@@ -25,4 +25,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeHero;
+export default AdventureIntro;

@@ -1,12 +1,12 @@
 import { StyleSheet, View } from 'react-native';
 import StoryBooks from '../containers/StoryBooks';
-import HomeHero from '../containers/HomeHero';
+import AdventureIntro from '../containers/AdventureIntro';
 
 function MainScreen() {
   return (
     <View style={styles.root}>
       <View style={styles.hero}>
-        <HomeHero />
+        <AdventureIntro />
       </View>
       <View style={styles.storyBooks}>
         <StoryBooks />
