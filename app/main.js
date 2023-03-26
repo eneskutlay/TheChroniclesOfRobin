@@ -1,8 +1,8 @@
 import { StyleSheet, View } from 'react-native';
-import StoryBooks from '../containers/StoryBooks';
-import AdventureIntro from '../containers/AdventureIntro';
+import StoryBooks from '../src/containers/StoryBooks';
+import AdventureIntro from '../src/containers/AdventureIntro';
 
-function MainScreen() {
+function IndexPage() {
   return (
     <View style={styles.root}>
       <View style={styles.hero}>
@@ -34,4 +34,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MainScreen;
+export default IndexPage;
