@@ -5,7 +5,7 @@ function RootPage() {
   return (
     <View style={styles.container}>
       <Text>Root Screen</Text>
-      <Link href='/main'>Go to Main</Link>
+      <Link href='/stories'>Go to Main</Link>
     </View>
   );
 }
