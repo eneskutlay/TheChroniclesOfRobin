@@ -1,15 +1,18 @@
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, Pressable } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
+import { LinearGradient } from 'expo-linear-gradient';
 
 function Book({ stories }) {
   const router = useRouter();
+  const [updatedStories, setUpdatedStories] = useState(stories);
+
   const onBookPress = (storyId) => {
     router.push({ pathname: 'stories/questions/[id]', params: { id: storyId } });
   };
 
   const renderStories = () => {
-    return stories.map((story) => (
+    return updatedStories.map((story) => (
       <Pressable style={styles.book} key={story._id} onPress={() => onBookPress(story.storyId)}>
         <LinearGradient
           style={styles.bookCover}

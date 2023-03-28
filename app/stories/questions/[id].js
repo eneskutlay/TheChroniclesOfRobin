@@ -1,32 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { usePathname } from 'expo-router'; //Link for going back to the previous page
-import { API_URL } from '@env';
+// import { usePathname } from 'expo-router'; Link for going back to the previous page
+import useStoryQuestions from '../../../src/hooks/useStoryQuestions';
 
-function Story() {
-  const pathname = usePathname();
-  const [questions, setQuestions] = useState([]);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch(`${API_URL}${pathname}`);
-      const data = await response.json();
-      setQuestions(data);
-    }
-    fetchData();
-  }, []);
-
-  function handleAnswerClick(answer) {
-    const nextQuestionId = answer.nextQuestionId;
-    const nextQuestionIndex = questions.findIndex((q) => q.questionId === nextQuestionId);
-    if (nextQuestionIndex !== -1) {
-      setCurrentQuestionIndex(nextQuestionIndex);
-    }
-  }
-
+function StoryDetails() {
+  const { questions, currentQuestionIndex, handleAnswerClick } = useStoryQuestions();
   return (
     <View style={styles.root}>
-      <Text style={styles.rootText}>{questions[currentQuestionIndex].questionText}</Text>
+      {questions.length > 0 && (
+        <>
+          <Text style={styles.rootText}>{questions[currentQuestionIndex].questionText}</Text>
+        </>
+      )}
     </View>
   );
 }
@@ -66,4 +51,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Story;
+export default StoryDetails;

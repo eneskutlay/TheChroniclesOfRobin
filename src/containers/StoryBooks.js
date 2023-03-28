@@ -1,29 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, ActivityIndicator } from 'react-native';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
 import Book from '../components/Book';
-import { API_URL } from '@env';
+import useStories from '../hooks/useStories';
+import LoadingIndicator from '../components/LoadingIndicator';
 
-function BookContainer() {
-  const [loading, setLoading] = useState(true);
-  const [stories, setStories] = useState([]);
+function StoryBooks() {
+  const [stories, loading] = useStories();
 
-  useEffect(() => {
-    fetch(`${API_URL}/stories/`)
-      .then((response) => response.json())
-      .then((data) => {
-        setStories(data);
-        setLoading(false);
-      })
-      .catch((error) => console.error(error));
-  }, []);
+  if (loading) {
+    return <LoadingIndicator />;
+  }
 
   return (
     <View style={styles.root}>
-      {loading ? (
-        <ActivityIndicator style={styles.loadingContainer} size='small' color='#999999' />
-      ) : (
-        <Book stories={stories} />
-      )}
+      <Book stories={stories} />
     </View>
   );
 }
@@ -33,12 +23,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
   },
-  loadingContainer: {
-    flex: 12,
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    marginTop: '25%',
-  },
 });
 
-export default BookContainer;
+export default StoryBooks;
