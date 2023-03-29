@@ -15,7 +15,7 @@ git clone https://github.com/eneskutlay/TheChroniclesOfRobin.git
 2. Install the dependencies:
 
 ```sh
-cd TheChroniclesOfRobin
+cd the-chronicles-of-robin
 npm install
 ```
 
