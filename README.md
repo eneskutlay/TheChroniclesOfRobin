@@ -9,7 +9,7 @@ To install The Chronicles of Robin on your mobile device, follow the instruction
 1. Clone the repository:
 
 ```sh
-git clone https://github.com/eneskutlay/TheChroniclesOfRobin.git
+git clone https://github.com/eneskutlay/the-chronicles-of-robin.git
 ```
 
 2. Install the dependencies:
