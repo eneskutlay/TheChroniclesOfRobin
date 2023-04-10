@@ -1,19 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-
 import useStoryQuestions from '../../../src/hooks/useStoryQuestions';
 import Story from '../../../src/components/Story';
+import LoadingIndicator from '../../../src/components/LoadingIndicator';
 
 const StoryDetails = () => {
+  const [loading, setLoading] = useState(true);
   const { questions, currentQuestionIndex, handleAnswerClick } = useStoryQuestions();
+
+  useEffect(() => {
+    if (questions.length > 0) {
+      setLoading(false);
+    }
+  }, [questions]);
 
   return (
     <View style={styles.container}>
-      <View style={styles.image}>
-        <Text>Maybe Image Here</Text>
-      </View>
-      {questions.length > 0 && (
-        <Story question={questions[currentQuestionIndex]} handleAnswerClick={handleAnswerClick} />
+      {loading ? (
+        <LoadingIndicator />
+      ) : (
+        <>
+          <View style={styles.image}>
+            <Text>Maybe Image Here</Text>
+          </View>
+          <Story question={questions[currentQuestionIndex]} handleAnswerClick={handleAnswerClick} />
+        </>
       )}
     </View>
   );

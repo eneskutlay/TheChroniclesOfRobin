@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, Text, View, Pressable } from 'react-native';
 import { useRouter } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
 
 function Book({ stories }) {
   const router = useRouter();
-  const [updatedStories, setUpdatedStories] = useState(stories);
 
   const onBookPress = (storyId) => {
     router.push({ pathname: 'stories/questions/[id]', params: { id: storyId } });
   };
 
   const renderStories = () => {
-    return updatedStories.map((story) => (
+    return stories.map((story) => (
       <Pressable style={styles.book} key={story._id} onPress={() => onBookPress(story.storyId)}>
         <LinearGradient
           style={styles.bookCover}
@@ -36,12 +35,11 @@ function Book({ stories }) {
 
 const styles = StyleSheet.create({
   root: {
-    flex: 1,
+    display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    marginTop: 25,
+    paddingTop: 25,
   },
   book: {
     width: '31%',

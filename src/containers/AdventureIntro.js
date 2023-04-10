@@ -2,26 +2,23 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Header, Description } from '../components/TextComponents';
 
 function AdventureIntro() {
+  let lorem =
+    'Quisque erat mi, finibus ut gravida at, imperdiet a nibh. Quisque nisl est, venenatis eu lorem non, placerat aliquet libero. Fusce blandit magna a tincidunt lacinia. Vivamus maximus libero enim, quis interdum odio vestibulum at.';
   return (
     // data or static? && props?
-    <View style={styles.gameWrite}>
-      <Header>Story Books</Header>
-      <Description>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies, nisl et ultricies
-        lacinia, nisl nisl aliquet nisl, et aliquet nisl nisl sit amet nisl. Donec ultricies, nisl
-        et ultricies lacinia, nisl nisl aliquet nisl, et aliquet nisl nisl sit amet nisl aasdas enes
-        sd.
-      </Description>
+    <View style={styles.container}>
+      <Header title='Story Books' />
+      <Description text={lorem} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  gameWrite: {
-    flex: 1,
-    maxWidth: '92%',
+  container: {
+    minWidth: '92%',
     alignSelf: 'center',
     gap: 10,
+    marginHorizontal: 10,
   },
 });
 

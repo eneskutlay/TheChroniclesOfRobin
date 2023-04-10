@@ -1,22 +1,26 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import BackArrow from './BackArrow';
 
 const Story = ({ question, handleAnswerClick }) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.question}>{question.questionText}</Text>
-      <View style={styles.answers}>
-        {question.answers.map((answer) => (
-          <TouchableOpacity
-            key={answer.answerId}
-            style={styles.answerContainer}
-            onPress={() => handleAnswerClick(answer)}
-          >
-            <Text style={styles.answerText}>{answer.answerText}</Text>
-          </TouchableOpacity>
-        ))}
+    <>
+      <View style={styles.container}>
+        <Text style={styles.question}>{question.questionText}</Text>
+        <View style={styles.answers}>
+          {question.answers.map((answer) => (
+            <TouchableOpacity
+              key={answer.answerId}
+              style={styles.answerContainer}
+              onPress={() => handleAnswerClick(answer)}
+            >
+              <Text style={styles.answerText}>{answer.answerText}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
       </View>
-    </View>
+      <BackArrow />
+    </>
   );
 };
 
@@ -39,6 +43,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     minWidth: '90%',
+    marginVertical: 10,
   },
   answerContainer: {
     width: '48%',

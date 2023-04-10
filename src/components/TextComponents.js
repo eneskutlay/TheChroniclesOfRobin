@@ -1,24 +1,33 @@
-import { StyleSheet, Text } from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
-const Header = ({ children }) => {
-  return <Text style={styles.header}>{children}</Text>;
+const Header = ({ title }) => {
+  return (
+    <View>
+      <Text style={styles.title}>{title}</Text>
+    </View>
+  );
 };
 
-const Description = ({ children }) => {
-  return <Text style={styles.description}>{children}</Text>;
+const Description = ({ text }) => {
+  return (
+    <View>
+      <Text style={styles.text}>{text}</Text>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
-  header: {
+  title: {
     fontSize: 20,
-    color: 'white',
     fontWeight: 'bold',
-  },
-  description: {
-    fontSize: 14,
-    lineHeight: 20,
-    fontFamily: 'System',
     color: 'white',
+  },
+  text: {
+    fontSize: 14,
+    color: 'white',
+    fontFamily: 'System',
+    flexWrap: 'wrap',
   },
 });
 

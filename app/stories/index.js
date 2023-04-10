@@ -5,23 +5,19 @@ import AdventureIntro from '../../src/containers/AdventureIntro';
 function StoriesScreen() {
   return (
     <View style={styles.root}>
-      <View style={styles.hero}>
-        <AdventureIntro />
-      </View>
-      <View style={styles.storyBooks}>
-        <ScrollView style={styles.scrollView}>
+      <ScrollView style={styles.scrollView}>
+        <View style={styles.hero}>
+          <AdventureIntro />
+        </View>
+        <View style={styles.storyBooks}>
           <StoryBooks />
-        </ScrollView>
-      </View>
+        </View>
+      </ScrollView>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: '#1E1E1E',
-  },
-
   root: {
     flex: 1,
     backgroundColor: '#1E1E1E',
@@ -36,7 +32,6 @@ const styles = StyleSheet.create({
     flex: 6,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: '8%',
   },
 });
 
