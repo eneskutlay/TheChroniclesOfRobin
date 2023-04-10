@@ -1,4 +1,4 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, ScrollView } from 'react-native';
 import StoryBooks from '../../src/containers/StoryBooks';
 import AdventureIntro from '../../src/containers/AdventureIntro';
 
@@ -9,13 +9,19 @@ function StoriesScreen() {
         <AdventureIntro />
       </View>
       <View style={styles.storyBooks}>
-        <StoryBooks />
+        <ScrollView style={styles.scrollView}>
+          <StoryBooks />
+        </ScrollView>
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  scrollView: {
+    backgroundColor: '#1E1E1E',
+  },
+
   root: {
     flex: 1,
     backgroundColor: '#1E1E1E',
