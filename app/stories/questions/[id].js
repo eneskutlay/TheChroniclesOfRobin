@@ -14,18 +14,16 @@ const StoryDetails = () => {
     }
   }, [questions]);
 
+  if (loading) {
+    return <LoadingIndicator />;
+  }
+
   return (
     <View style={styles.container}>
-      {loading ? (
-        <LoadingIndicator />
-      ) : (
-        <>
-          <View style={styles.image}>
-            <Text>Maybe Image Here</Text>
-          </View>
-          <Story question={questions[currentQuestionIndex]} handleAnswerClick={handleAnswerClick} />
-        </>
-      )}
+      <View style={styles.image}>
+        <Text>Maybe Image Here</Text>
+      </View>
+      <Story question={questions[currentQuestionIndex]} handleAnswerClick={handleAnswerClick} />
     </View>
   );
 };
