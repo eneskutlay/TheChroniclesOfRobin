@@ -4,7 +4,12 @@
     "web": {
       "bundler": "metro"
     },
-    "name": "TheChroniclesOfRobin",
-    "slug": "TheChroniclesOfRobin"
+    "name": "The Chronicles of Robin",
+    "slug": "the-chronicles-of-robin",
+    "extra": {
+      "eas": {
+        "projectId": "6bbc8fb4-6a58-4256-bb19-3b447dffabf2"
+      }
+    }
   }
 }
