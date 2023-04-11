@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { usePathname } from 'expo-router';
-import { API_URL } from '@env';
+import { useState, useEffect } from "react";
+import { usePathname } from "expo-router";
+import { API_URL } from "@env";
 
 function useStoryQuestions() {
   const pathname = usePathname();
@@ -9,16 +9,22 @@ function useStoryQuestions() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(`${API_URL}${pathname}`);
-      const data = await response.json();
-      setQuestions(data);
+      try {
+        const response = await fetch(`${API_URL}${pathname}`);
+        const data = await response.json();
+        setQuestions(data);
+      } catch (error) {
+        console.log(error);
+      }
     }
     fetchData();
-  }, []);
+  }, [pathname]);
 
   function handleAnswerClick(answer) {
     const nextQuestionId = answer.nextQuestionId;
-    const nextQuestionIndex = questions.findIndex((q) => q.questionId === nextQuestionId);
+    const nextQuestionIndex = questions.findIndex(
+      (q) => q.questionId === nextQuestionId
+    );
     if (nextQuestionIndex !== -1) {
       setCurrentQuestionIndex(nextQuestionIndex);
     }
