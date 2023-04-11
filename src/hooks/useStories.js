@@ -16,6 +16,5 @@ function useStories() {
   }, []);
   return [stories, loading];
 }
-console.log(`${API_URL}/stories/`)
 
 export default useStories;
