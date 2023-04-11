@@ -10,7 +10,7 @@ function Book({ stories }) {
     router.push({ pathname: 'stories/questions/[id]', params: { id: storyId } });
   };
 
-  const renderStories = () => {
+  const renderBook = () => {
     return stories.map(story => (
       <Pressable style={styles.book} key={story._id} onPress={() => onBookPress(story.storyId)}>
         <LinearGradient
@@ -30,7 +30,7 @@ function Book({ stories }) {
     ));
   };
 
-  return <View style={styles.root}>{renderStories()}</View>;
+  return <View style={styles.root}>{renderBook()}</View>;
 }
 
 const styles = StyleSheet.create({
