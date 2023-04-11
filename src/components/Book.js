@@ -6,12 +6,12 @@ import { LinearGradient } from 'expo-linear-gradient';
 function Book({ stories }) {
   const router = useRouter();
 
-  const onBookPress = (storyId) => {
+  const onBookPress = storyId => {
     router.push({ pathname: 'stories/questions/[id]', params: { id: storyId } });
   };
 
   const renderStories = () => {
-    return stories.map((story) => (
+    return stories.map(story => (
       <Pressable style={styles.book} key={story._id} onPress={() => onBookPress(story.storyId)}>
         <LinearGradient
           style={styles.bookCover}

@@ -1,5 +1,5 @@
-import { Link } from "expo-router";
-import { StyleSheet, Text, View } from "react-native";
+import { Link } from 'expo-router';
+import { StyleSheet, Text, View } from 'react-native';
 
 function App() {
   return (
@@ -13,9 +13,9 @@ function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#1E1E1E",
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#1E1E1E',
   },
 });
 

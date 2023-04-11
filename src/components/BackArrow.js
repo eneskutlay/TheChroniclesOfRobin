@@ -5,7 +5,7 @@ import { View, StyleSheet } from 'react-native';
 function BackArrow() {
   return (
     <View>
-      <Link style={styles.backArrow} href='/stories'>
+      <Link style={styles.backArrow} href="/stories">
         {' '}
         ⇦ Back to Stories
       </Link>

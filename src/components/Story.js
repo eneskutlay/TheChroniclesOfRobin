@@ -8,7 +8,7 @@ const Story = ({ question, handleAnswerClick }) => {
       <View style={styles.container}>
         <Text style={styles.question}>{question.questionText}</Text>
         <View style={styles.answers}>
-          {question.answers.map((answer) => (
+          {question.answers.map(answer => (
             <TouchableOpacity
               key={answer.answerId}
               style={styles.answerContainer}

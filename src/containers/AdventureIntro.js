@@ -7,7 +7,7 @@ function AdventureIntro() {
   return (
     // data or static? && props?
     <View style={styles.container}>
-      <Header title='Story Books' />
+      <Header title="Story Books" />
       <Description text={lorem} />
     </View>
   );

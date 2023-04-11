@@ -1,0 +1,35 @@
+# Ignore all files in node_modules
+**/node_modules/**
+
+# Ignore all files in android folder
+android/**
+
+# Ignore all files in ios folder
+ios/**
+
+# Ignore all files in web folder
+web/**
+
+# Ignore all files in __tests__ folder
+__tests__/**
+
+# Ignore all files in coverage folder
+coverage/**
+
+# Ignore all files in build folder
+build/**
+
+# Ignore all files in dist folder
+dist/**
+
+# Ignore all files in .vscode folder
+.vscode/**
+
+# Ignore all files in .idea folder
+.idea/**
+
+# Ignore all files in .expo folder
+.expo/**
+
+# Ignore all files in .expo-shared folder
+.expo-shared/**

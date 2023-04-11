@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { API_URL } from "@env";
+import { useState, useEffect } from 'react';
+import { API_URL } from '@env';
 
 function useStories() {
   const [loading, setLoading] = useState(true);
@@ -7,12 +7,12 @@ function useStories() {
 
   useEffect(() => {
     fetch(`${API_URL}/stories/`)
-      .then((response) => response.json())
-      .then((data) => {
+      .then(response => response.json())
+      .then(data => {
         setStories(data);
         setLoading(false);
       })
-      .catch((error) => console.error(error));
+      .catch(error => console.error(error));
   }, []);
   return [stories, loading];
 }
