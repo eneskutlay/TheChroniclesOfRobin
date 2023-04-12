@@ -6,7 +6,18 @@ const Story = ({ question, handleAnswerClick }) => {
   return (
     <>
       <View style={styles.container}>
-        <Text style={styles.question}>{question.questionText}</Text>
+        <Text
+          style={[
+            styles.question,
+            {
+              color: question.isFinalQuestion ? '#A4A7AE' : 'white',
+              textAlign: question.isFinalQuestion ? 'center' : 'auto',
+              marginTop: question.isFinalQuestion ? '25%' : 0,
+            },
+          ]}
+        >
+          {question.questionText}
+        </Text>
         <View style={styles.answers}>
           {question.answers.map(answer => (
             <TouchableOpacity
@@ -30,6 +41,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 10,
     marginVertical: 10,
+    backgroundColor: '#1E1E1E',
   },
   question: {
     fontSize: 20,
