@@ -20,9 +20,6 @@ const StoryDetails = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.image}>
-        <Text>Maybe Image Here</Text>
-      </View>
       <Story question={questions[currentQuestionIndex]} handleAnswerClick={handleAnswerClick} />
     </View>
   );
@@ -32,13 +29,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#1E1E1E',
-  },
-  image: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'pink',
-    opacity: 0.2,
-    height: 200,
+    paddingTop: 200,
   },
 });
 
