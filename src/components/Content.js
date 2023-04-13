@@ -1,36 +1,34 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import BackArrow from './BackArrow';
 
-const Story = ({ question, handleAnswerClick }) => {
+const Story = ({ content, handleChoiceClick }) => {
   return (
     <>
       <View style={styles.container}>
         <Text
           style={[
-            styles.question,
+            styles.content,
             {
-              color: question.isFinalQuestion ? '#A4A7AE' : 'white',
-              textAlign: question.isFinalQuestion ? 'center' : 'auto',
-              marginTop: question.isFinalQuestion ? '25%' : 0,
+              color: content.isFinal ? '#A4A7AE' : 'white',
+              textAlign: content.isFinal ? 'center' : 'auto',
+              marginTop: content.isFinal ? '25%' : 0,
             },
           ]}
         >
-          {question.questionText}
+          {content.contentText}
         </Text>
         <View style={styles.answers}>
-          {question.answers.map(answer => (
+          {content.choices.map(choice => (
             <TouchableOpacity
-              key={answer.answerId}
+              key={choice.choiceId}
               style={styles.answerContainer}
-              onPress={() => handleAnswerClick(answer)}
+              onPress={() => handleChoiceClick(choice)}
             >
-              <Text style={styles.answerText}>{answer.answerText}</Text>
+              <Text style={styles.answerText}>{choice.choiceText}</Text>
             </TouchableOpacity>
           ))}
         </View>
       </View>
-      <BackArrow />
     </>
   );
 };
@@ -43,7 +41,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     backgroundColor: '#1E1E1E',
   },
-  question: {
+  content: {
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 10,

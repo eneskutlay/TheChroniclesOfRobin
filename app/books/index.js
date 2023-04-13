@@ -1,11 +1,10 @@
-import { Link } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
+import RenderBooks from '../../src/containers/RenderBooks';
 
 function App() {
   return (
     <View style={styles.container}>
-      <Text>Root Screen</Text>
-      <Link href="/books">Go to Main</Link>
+      <RenderBooks />
     </View>
   );
 }

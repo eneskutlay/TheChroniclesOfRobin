@@ -1,20 +1,20 @@
 import { useState, useEffect } from 'react';
 import { API_URL } from '@env';
 
-function useStories() {
+const getBooks = () => {
+  const [book, setBook] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [stories, setStories] = useState([]);
 
   useEffect(() => {
-    fetch(`${API_URL}/stories/`)
+    fetch(`${API_URL}/books/`)
       .then(response => response.json())
       .then(data => {
-        setStories(data);
+        setBook(data);
         setLoading(false);
       })
       .catch(error => console.error(error));
   }, []);
-  return [stories, loading];
-}
+  return [book, loading];
+};
 
-export default useStories;
+export default getBooks;

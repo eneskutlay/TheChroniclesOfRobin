@@ -1,18 +1,17 @@
-import React from 'react';
 import { StyleSheet, Text, View, Pressable } from 'react-native';
 import { useRouter } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
 
-function Book({ stories }) {
+function Book({ books }) {
   const router = useRouter();
 
-  const onBookPress = storyId => {
-    router.push({ pathname: 'stories/questions/[id]', params: { id: storyId } });
+  const onBookPress = bookId => {
+    router.push({ pathname: '/books/[id]', params: { id: bookId } });
   };
 
   const renderBook = () => {
-    return stories.map(story => (
-      <Pressable style={styles.book} key={story._id} onPress={() => onBookPress(story.storyId)}>
+    return books.map(book => (
+      <Pressable style={styles.book} key={book._id} onPress={() => onBookPress(book.bookId)}>
         <LinearGradient
           style={styles.bookCover}
           colors={['#005024', '#00753A']}
@@ -20,11 +19,11 @@ function Book({ stories }) {
           end={{ x: 1, y: 1 }}
         >
           <View style={styles.bookInside}>
-            <Text style={styles.title}>{story.storyName}</Text>
+            <Text style={styles.title}>{book.bookName}</Text>
           </View>
         </LinearGradient>
-        <View style={styles.storyDescContainer}>
-          <Text style={styles.storyDesc}>{story.storyDesc}</Text>
+        <View style={styles.bookDescContainer}>
+          <Text style={styles.bookDesc}>{book.bookIntro}</Text>
         </View>
       </Pressable>
     ));
@@ -62,10 +61,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
   },
-  storyDescContainer: {
+  bookDescContainer: {
     padding: 2,
   },
-  storyDesc: {
+  bookDesc: {
     fontSize: 12,
     color: 'gray',
   },
