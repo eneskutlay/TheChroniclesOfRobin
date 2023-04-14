@@ -1,13 +1,15 @@
 import { StyleSheet, Text, View, Image, Button } from 'react-native';
 import getIntro from '../../src/hooks/getIntro';
 import { useRouter } from 'expo-router';
+import LoadingAnimation from '../../src/components/Animation';
+import { IntroText } from '../../src/components/Texts';
 
 function Intro() {
   const [intro, loading] = getIntro();
   const router = useRouter();
 
   if (loading) {
-    return <Text>Loading</Text>;
+    return <LoadingAnimation />;
   }
 
   const onStartPress = bookId => {
@@ -16,19 +18,23 @@ function Intro() {
 
   return (
     <View style={styles.root}>
-      <Image
-        source={{
-          uri: intro.bookIntroImageUrl,
-        }}
-        style={styles.introImage}
-      />
-      <Text style={styles.intro}>{intro.bookIntro}</Text>
-      <Button
-        onPress={() => onStartPress(intro.bookId)}
-        title="Learn More"
-        color="#841584"
-        accessibilityLabel="Learn more about this purple button"
-      />
+      <View style={styles.imageContainer}>
+        <Image
+          source={{
+            uri: intro.bookIntroImageUrl,
+          }}
+          style={styles.introImage}
+        />
+      </View>
+      <View style={styles.introContainer}>
+        <IntroText children={intro.bookIntro} />
+        <Button
+          onPress={() => onStartPress(intro.bookId)}
+          title="Start the Story"
+          color="#9F682B"
+          accessibilityLabel="Learn more about this purple button"
+        />
+      </View>
     </View>
   );
 }
@@ -39,14 +45,17 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
   },
-  intro: {
-    color: '#fff',
-    fontSize: 24,
+  imageContainer: {
+    flex: 2,
+    width: '100%',
+    height: '100%',
   },
   introImage: {
     width: '100%',
-    height: 300,
-    borderRadius: 10,
+    height: 350,
+  },
+  introContainer: {
+    flex: 3,
   },
 });
 
