@@ -1,12 +1,13 @@
 import { StyleSheet, View, Text } from 'react-native';
 import Book from '../components/Book';
 import getBooks from '../hooks/getBooks';
+import LoadingAnimation from '../components/Animation';
 
 function StoryBooks() {
   const [book, loading] = getBooks();
 
   if (loading) {
-    return <Text>Loading</Text>;
+    return <LoadingAnimation />;
   }
 
   return (
@@ -19,7 +20,7 @@ function StoryBooks() {
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    padding: 10,
+    padding: 8,
   },
 });
 
