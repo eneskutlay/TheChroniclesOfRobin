@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import getContent from '../../../src/hooks/getContent';
-import Content from '../../../src/components/Content';
-import BackButton from '../../../src/components/Buttons';
-import LoadingAnimation from '../../../src/components/Animation';
+import { getContent } from '@hooks';
+import { Content, BackButton, LoadingAnimation } from '@components';
 
 const ContentDetails = () => {
   const [loading, setLoading] = useState(true);
@@ -21,7 +19,9 @@ const ContentDetails = () => {
   return (
     <View style={styles.container}>
       <Content content={contents[currentContentIndex]} handleChoiceClick={handleChoiceClick} />
-      <BackButton />
+      <View style={styles.containerFooter}>
+        <BackButton />
+      </View>
     </View>
   );
 };
@@ -30,8 +30,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#1E1E1E',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 200,
+  },
+  containerFooter: {
+    marginVertical: 25,
+    marginHorizontal: 25,
+    width: 'auto',
   },
 });
 

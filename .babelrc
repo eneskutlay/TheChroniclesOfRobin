@@ -7,6 +7,17 @@
         "moduleName": "@env",
         "path": ".env"
       }
+    ],
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "@components": "./src/components",
+          "@hooks": "./src/hooks",
+          "@containers": "./src/containers"
+        }
+      }
     ]
   ]
 }

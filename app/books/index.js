@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, ScrollView, SafeAreaView } from 'react-native';
-import RenderBooks from '../../src/containers/RenderBooks';
-import { Header, Description } from '../../src/components/Texts';
+import RenderBooks from '@containers/RenderBooks';
+import { Header, Description } from '@components';
 
 function App() {
   let lorem =

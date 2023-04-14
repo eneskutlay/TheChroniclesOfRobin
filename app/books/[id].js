@@ -1,8 +1,7 @@
 import { StyleSheet, Text, View, Image, Button } from 'react-native';
-import getIntro from '../../src/hooks/getIntro';
 import { useRouter } from 'expo-router';
-import LoadingAnimation from '../../src/components/Animation';
-import { IntroText } from '../../src/components/Texts';
+import { getIntro } from '@hooks';
+import { IntroText, LoadingAnimation } from '@components';
 
 function Intro() {
   const [intro, loading] = getIntro();
@@ -18,14 +17,13 @@ function Intro() {
 
   return (
     <View style={styles.root}>
-      <View style={styles.imageContainer}>
-        <Image
-          source={{
-            uri: intro.bookIntroImageUrl,
-          }}
-          style={styles.introImage}
-        />
-      </View>
+      <Image
+        source={{
+          uri: intro.bookIntroImageUrl,
+        }}
+        style={styles.introImage}
+      />
+
       <View style={styles.introContainer}>
         <IntroText children={intro.bookIntro} />
         <Button
@@ -41,14 +39,9 @@ function Intro() {
 
 const styles = StyleSheet.create({
   root: {
-    backgroundColor: '#1E1E1E',
     flex: 1,
     alignItems: 'center',
-  },
-  imageContainer: {
-    flex: 2,
-    width: '100%',
-    height: '100%',
+    backgroundColor: '#1E1E1E',
   },
   introImage: {
     width: '100%',

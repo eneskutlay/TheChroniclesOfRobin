@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-const Story = ({ content, handleChoiceClick }) => {
+const Content = ({ content, handleChoiceClick }) => {
   return (
     <>
       <View style={styles.container}>
@@ -17,14 +17,14 @@ const Story = ({ content, handleChoiceClick }) => {
         >
           {content.contentText}
         </Text>
-        <View style={styles.answers}>
+        <View style={styles.choice}>
           {content.choices.map(choice => (
             <TouchableOpacity
               key={choice.choiceId}
-              style={styles.answerContainer}
+              style={styles.choiceContainer}
               onPress={() => handleChoiceClick(choice)}
             >
-              <Text style={styles.answerText}>{choice.choiceText}</Text>
+              <Text style={styles.choiceText}>{choice.choiceText}</Text>
             </TouchableOpacity>
           ))}
         </View>
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     color: '#fff',
   },
-  answers: {
+  choice: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     minWidth: '90%',
     marginVertical: 10,
   },
-  answerContainer: {
+  choiceContainer: {
     width: '48%',
     paddingVertical: 10,
     paddingHorizontal: 20,
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  answerText: {
+  choiceText: {
     fontSize: 16,
     textAlign: 'center',
     textAlign: 'left',
@@ -76,4 +76,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Story;
+export default Content;
