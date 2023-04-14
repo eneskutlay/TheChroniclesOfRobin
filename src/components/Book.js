@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Pressable } from 'react-native';
 import { useRouter } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
+import { BookCoverName } from './Texts';
 
 function Book({ books }) {
   const router = useRouter();
@@ -18,13 +19,8 @@ function Book({ books }) {
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
         >
-          <View style={styles.bookInside}>
-            <Text style={styles.title}>{book.bookName}</Text>
-          </View>
+          <BookCoverName children={book.bookName} />
         </LinearGradient>
-        <View style={styles.bookDescContainer}>
-          <Text style={styles.bookDesc}>{book.bookIntro}</Text>
-        </View>
       </Pressable>
     ));
   };
@@ -38,7 +34,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    paddingTop: 25,
+    paddingTop: 15,
+    marginHorizontal: 3,
   },
   book: {
     width: '31%',
@@ -60,13 +57,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: 'bold',
     color: 'white',
-  },
-  bookDescContainer: {
-    padding: 2,
-  },
-  bookDesc: {
-    fontSize: 12,
-    color: 'gray',
   },
 });
 
