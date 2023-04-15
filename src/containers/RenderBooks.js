@@ -20,7 +20,7 @@ function StoryBooks() {
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    padding: 8,
+    padding: 10,
   },
 });
 

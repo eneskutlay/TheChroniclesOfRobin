@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
   },
   renderBooks: {
     flex: 6,
+    
   },
 });
 

@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   },
   book: {
     width: '31%',
-    marginBottom: 6,
+    marginBottom: 18,
   },
   bookCover: {
     height: 160,
