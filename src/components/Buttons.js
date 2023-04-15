@@ -1,5 +1,5 @@
 import { Link } from 'expo-router';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, Pressable } from 'react-native';
 
 const BackButton = () => (
   <Link href="/books">
@@ -9,12 +9,37 @@ const BackButton = () => (
   </Link>
 );
 
+const RootButton = ({ children, press }) => (
+  <Pressable style={styles.rootPressable} onPress={press}>
+    <Text style={styles.pressableText}>{children}</Text>
+  </Pressable>
+);
+
 const styles = StyleSheet.create({
   backButton: {
     backgroundColor: 'red',
     padding: 10,
     borderRadius: 5,
   },
+  rootPressable: {
+    width: '60%',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    marginVertical: 20,
+    backgroundColor: 'rgba(0, 105, 55, 1)',
+    height: '12%',
+    borderRadius: 10,
+    borderWidth: 3,
+    borderColor: 'rgba(217, 217, 217, 0.1)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  pressableText: {
+    fontSize: 16,
+    textAlign: 'center',
+    textAlign: 'left',
+    color: '#fff',
+  },
 });
 
-export default BackButton;
+export { BackButton, RootButton };
