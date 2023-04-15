@@ -6,6 +6,14 @@
     "ios": {
       "bundleIdentifier": "com.eneskutlay.the-chronicles-of-robin"
     },
+    "plugins": [
+      [
+        "expo-updates",
+        {
+          "username": "eneskutlay"
+        }
+      ]
+    ],
     "icon": "./assets/images/icon.png",
     "splash": {
       "image": "./assets/images/splash.png",
@@ -23,6 +31,9 @@
     },
     "runtimeVersion": {
       "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/6bbc8fb4-6a58-4256-bb19-3b447dffabf2"
     }
   }
 }
