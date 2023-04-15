@@ -13,7 +13,6 @@ web-build/
 .vscode/
 todo
 .prettierrc.*
-assets/images
 
 # OSX
 #
