@@ -12,7 +12,8 @@
         {
           "username": "eneskutlay"
         }
-      ]
+      ],
+      "expo-localization"
     ],
     "icon": "./assets/images/icon.png",
     "splash": {

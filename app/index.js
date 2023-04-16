@@ -38,7 +38,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-
   mainBody: {
     flex: 2,
     width: '100%',
