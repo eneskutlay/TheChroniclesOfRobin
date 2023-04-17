@@ -11,7 +11,7 @@ function getContent() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(`${API_URL}/${language}${pathname}`);
+        const response = await fetch(`${API_URL}${language}${pathname}`);
         const data = await response.json();
         setContents(data);
         setCurrentContentIndex(0);

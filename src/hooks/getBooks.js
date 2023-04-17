@@ -6,9 +6,8 @@ const getBooks = () => {
   const [book, setBook] = useState([]);
   const [loading, setLoading] = useState(true);
   const [language, setLanguage] = useState(Localization.getLocales()[0].languageCode);
-  console.log(`${API_URL}/${language}/books/`)
   useEffect(() => {
-    fetch(`${API_URL}/${language}/books/`)
+    fetch(`${API_URL}${language}/books/`)
       .then(response => response.json())
       .then(data => {
         setBook(data);

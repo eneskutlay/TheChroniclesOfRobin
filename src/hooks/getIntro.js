@@ -8,7 +8,7 @@ const getIntro = () => {
   const [intro, setIntro] = useState([]);
   const [loading, setLoading] = useState(true);
   const [language, setLanguage] = useState(Localization.getLocales()[0].languageCode);
-  console.log(`${API_URL}/${language}${pathname}`);
+  console.log(`${API_URL}${language}${pathname}`);
   useEffect(() => {
     fetch(`${API_URL}/${language}${pathname}`)
       .then(response => response.json())
