@@ -1,12 +1,12 @@
 import { useRouter } from 'expo-router';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import { Header, RootButton } from '@components';
 function App() {
   const router = useRouter();
   const lorem = ' Welcome the game of choices! ';
   let objChild = { children: ['Books', 'Options', 'Credits'] };
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.mainContent}>
         <Header children={lorem} />
       </View>
@@ -19,7 +19,7 @@ function App() {
           );
         })}
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
