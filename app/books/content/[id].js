@@ -20,7 +20,7 @@ const ContentDetails = () => {
     <View style={styles.container}>
       <Content content={contents[currentContentIndex]} handleChoiceClick={handleChoiceClick} />
       <View style={styles.containerFooter}>
-        <BackButton />
+        <BackButton href='/books' />
       </View>
     </View>
   );
