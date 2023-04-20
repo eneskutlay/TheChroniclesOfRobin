@@ -1,0 +1,31 @@
+{
+  "extends": ["eslint:recommended", "plugin:prettier/recommended", "plugin:react/recommended"],
+  "plugins": ["prettier", "react"],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "es6": true,
+    "node": true,
+    "react-native/react-native": true
+  },
+  "rules": {
+    "semi": "error",
+    "quotes": ["error", "single"],
+    "import/no-unresolved": "error",
+    "no-unused-vars": "warn",
+    "prettier/prettier": "error",
+    "react/jsx-uses-vars": "warn",
+    "react/jsx-uses-react": "warn",
+    "react/react-in-jsx-scope": "warn"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

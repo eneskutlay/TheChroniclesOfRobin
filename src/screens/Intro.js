@@ -1,18 +1,19 @@
 import { StyleSheet, Text, View, Image, Button } from 'react-native';
-import { useRouter } from 'expo-router';
-import { getIntro } from '@hooks';
-import { IntroText, LoadingAnimation } from '@components';
+import getIntro from '../hooks/getIntro';
+import LoadingAnimation from '../components/Animation';
+import { IntroText } from '../components/Texts';
+import { useNavigation } from '@react-navigation/native';
 
 function Intro() {
+  const navigation = useNavigation();
   const [intro, loading] = getIntro();
-  const router = useRouter();
 
   if (loading) {
     return <LoadingAnimation />;
   }
 
   const onStartPress = bookId => {
-    router.push({ pathname: '/books/content/[id]', params: { id: bookId } });
+    navigation.navigate('Content', { id: bookId });
   };
 
   return (

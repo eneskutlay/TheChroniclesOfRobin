@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View, ScrollView, SafeAreaView } from 'react-native';
-import RenderBooks from '@containers/RenderBooks';
-import { Header, Description } from '@components';
+import RenderBooks from '../../containers/RenderBooks';
+import { Header, Description } from '../../components/Texts';
 
-function App() {
+function Book() {
   let lorem =
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget aliquam tincidunt, nisl nisl aliquam nisl, nec aliquam nisl nisl sit amet nisl lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget aliquam tincidunt, nisl nisl aliquam nisl, nec aliquam nisl nisl sit amet nisl';
   return (
@@ -40,4 +40,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default Book;

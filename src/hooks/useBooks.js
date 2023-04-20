@@ -1,11 +1,10 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { API_URL } from '@env';
-import * as Localization from 'expo-localization';
 
-const getBooks = () => {
+const useBooks = () => {
   const [book, setBook] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [language, setLanguage] = useState(Localization.getLocales()[0].languageCode);
+  const language = 'en';
   useEffect(() => {
     fetch(`${API_URL}${language}/books/`)
       .then(response => response.json())
@@ -18,4 +17,4 @@ const getBooks = () => {
   return [book, loading];
 };
 
-export default getBooks;
+export default useBooks;

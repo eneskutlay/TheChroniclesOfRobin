@@ -1,15 +1,14 @@
 import { StyleSheet, Text, View, Pressable } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
-import { useRouter } from 'expo-router';
+import LinearGradient from 'react-native-linear-gradient';
 import { BookCoverName } from './Texts';
+import { useNavigation } from '@react-navigation/native';
 
 function Book({ books }) {
-  const router = useRouter();
+  const navigation = useNavigation();
 
   const onBookPress = bookId => {
-    router.push({ pathname: '/books/[id]', params: { id: bookId } });
+    navigation.navigate('Intro', { id: bookId });
   };
-
   const renderBook = () => {
     return books.map(book => (
       <Pressable style={styles.book} key={book._id} onPress={() => onBookPress(book.bookId)}>
@@ -27,6 +26,23 @@ function Book({ books }) {
 
   return <View style={styles.root}>{renderBook()}</View>;
 }
+
+/*
+
+    return books.map(book => (
+      <Pressable style={styles.book} key={book._id}>
+        <LinearGradient
+          style={styles.bookCover}
+          colors={['#005024', '#00753A']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+        >
+          <BookCoverName children={book.bookName} />
+        </LinearGradient>
+      </Pressable>
+    ));
+
+*/
 
 const styles = StyleSheet.create({
   root: {

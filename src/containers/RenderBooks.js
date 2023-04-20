@@ -1,10 +1,10 @@
 import { StyleSheet, View, Text } from 'react-native';
 import Book from '../components/Book';
-import getBooks from '../hooks/getBooks';
+import useBooks from '../hooks/useBooks';
 import LoadingAnimation from '../components/Animation';
 
 function StoryBooks() {
-  const [book, loading] = getBooks();
+  const [books, loading] = useBooks();
 
   if (loading) {
     return <LoadingAnimation />;
@@ -12,7 +12,7 @@ function StoryBooks() {
 
   return (
     <View style={styles.root}>
-      <Book books={book} />
+      <Book books={books} />
     </View>
   );
 }

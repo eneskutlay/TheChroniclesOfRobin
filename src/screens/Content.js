@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { getContent } from '@hooks';
-import { Content, BackButton, LoadingAnimation } from '@components';
+import getContent from '../../src/hooks/getContent';
+import Content from '../../src/components/Content';
+import LoadingAnimation from '../components/Animation';
 
 const ContentDetails = () => {
   const [loading, setLoading] = useState(true);
@@ -19,9 +20,7 @@ const ContentDetails = () => {
   return (
     <View style={styles.container}>
       <Content content={contents[currentContentIndex]} handleChoiceClick={handleChoiceClick} />
-      <View style={styles.containerFooter}>
-        <BackButton href='/books' />
-      </View>
+      <View style={styles.containerFooter}></View>
     </View>
   );
 };

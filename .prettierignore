@@ -7,9 +7,6 @@ android/**
 # Ignore all files in ios folder
 ios/**
 
-# Ignore all files in web folder
-web/**
-
 # Ignore all files in __tests__ folder
 __tests__/**
 
@@ -28,8 +25,5 @@ dist/**
 # Ignore all files in .idea folder
 .idea/**
 
-# Ignore all files in .expo folder
-.expo/**
 
-# Ignore all files in .expo-shared folder
-.expo-shared/**
+vendor/**

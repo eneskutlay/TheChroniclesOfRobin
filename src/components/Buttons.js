@@ -1,12 +1,9 @@
-import { Link } from 'expo-router';
 import { View, StyleSheet, Text, Pressable } from 'react-native';
 
-const BackButton = ({ href }) => (
-  <Link href={href}>
-    <View style={styles.backButton}>
-      <Text>Back</Text>
-    </View>
-  </Link>
+const BackButton = () => (
+  <View style={styles.backButton}>
+    <Text>Back</Text>
+  </View>
 );
 
 const RootButton = ({ children, press }) => (

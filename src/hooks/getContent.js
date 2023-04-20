@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
-import { usePathname } from 'expo-router';
+import { useRoute } from '@react-navigation/native';
 import { API_URL } from '@env';
-import * as Localization from 'expo-localization';
 
 function getContent() {
-  const pathname = usePathname();
+  const route = useRoute();
+  const { id } = route.params;
+  const pathname = `/books/content/${id}`;
   const [contents, setContents] = useState([]);
   const [currentContentIndex, setCurrentContentIndex] = useState(0);
-  const [language, setLanguage] = useState(Localization.getLocales()[0].languageCode);
+  const language = 'en';
   useEffect(() => {
     async function fetchData() {
       try {

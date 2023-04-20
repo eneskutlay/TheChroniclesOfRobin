@@ -1,8 +1,8 @@
-import { useRouter } from 'expo-router';
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import { Header, RootButton } from '@components';
-function App() {
-  const router = useRouter();
+import { Header } from '../components/Texts';
+import { RootButton } from '../components/Buttons';
+
+function Index({ navigation }) {
   const lorem = ' Welcome the game of choices! ';
   let objChild = { children: ['Books', 'Options', 'Credits'] };
   return (
@@ -13,7 +13,7 @@ function App() {
       <View style={styles.mainBody}>
         {objChild.children.map((child, index) => {
           return (
-            <RootButton press={() => router.push(`${child.toLowerCase()}`)} key={index}>
+            <RootButton press={() => navigation.navigate(`${child}`)} key={index}>
               {child}
             </RootButton>
           );
@@ -46,4 +46,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default Index;
