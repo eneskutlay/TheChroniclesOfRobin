@@ -1,9 +1,9 @@
 import { StyleSheet, View, Text } from 'react-native';
 import Book from '../components/Book';
-import useBooks from '../hooks/useBooks';
+import useBooks from '../hooks/getBooks';
 import LoadingAnimation from '../components/Animation';
 
-function StoryBooks() {
+function RenderBooks() {
   const [books, loading] = useBooks();
 
   if (loading) {
@@ -24,4 +24,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default StoryBooks;
+export default RenderBooks;

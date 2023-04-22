@@ -1,24 +1,21 @@
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import { Header } from '../components/Texts';
-import { RootButton } from '../components/Buttons';
+import { StyleSheet, Text, View, ScrollView, SafeAreaView } from 'react-native';
+import RenderBooks from '../containers/RenderBooks';
+import { Header, Description } from '../components/Texts';
 
-function Index({ navigation }) {
-  const lorem = ' Welcome the game of choices! ';
-  let objChild = { children: ['Books', 'Options', 'Credits'] };
+function Book() {
+  let lorem =
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget aliquam tincidunt, nisl nisl aliquam nisl, nec aliquam nisl nisl sit amet nisl lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl eget aliquam tincidunt, nisl nisl aliquam nisl, nec aliquam nisl nisl sit amet nisl';
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.mainContent}>
-        <Header children={lorem} />
-      </View>
-      <View style={styles.mainBody}>
-        {objChild.children.map((child, index) => {
-          return (
-            <RootButton press={() => navigation.navigate(`${child}`)} key={index}>
-              {child}
-            </RootButton>
-          );
-        })}
-      </View>
+      <ScrollView>
+        <View style={styles.details}>
+          <Header children="Welcome Robin" />
+          <Description children={lorem} />
+        </View>
+        <View style={styles.renderBooks}>
+          <RenderBooks />
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -26,24 +23,21 @@ function Index({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#1E1E1E',
-    width: '100%',
+    minWidth: '92%',
+    height: 'auto',
   },
-  mainContent: {
+  details: {
     flex: 1,
-    width: '100%',
+    paddingVertical: '4%',
+    alignSelf: 'center',
+    gap: 10,
+    marginHorizontal: 10,
     height: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
   },
-  mainBody: {
-    flex: 2,
-    width: '100%',
-    height: '100%',
-    alignItems: 'center',
+  renderBooks: {
+    flex: 6,
   },
 });
 
-export default Index;
+export default Book;
