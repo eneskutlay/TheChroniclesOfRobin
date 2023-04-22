@@ -1,8 +1,7 @@
 import { StyleSheet, Text, View, Image, Button } from 'react-native';
-import getIntro from '../hooks/getIntro';
-import LoadingAnimation from '../components/Animation';
-import { IntroText } from '../components/Texts';
 import { useNavigation } from '@react-navigation/native';
+import { getIntro } from '@hooks';
+import { IntroText, LoadingAnimation } from '@components';
 
 function Intro() {
   const navigation = useNavigation();

@@ -9,5 +9,18 @@ module.exports = {
         path: '.env',
       },
     ],
+    [
+      'module-resolver',
+      {
+        root: ['./'],
+        alias: {
+          '@components': './src/components',
+          '@hooks': './src/hooks',
+          '@containers': './src/containers',
+          '@screens': './src/screens',
+          '@utils': './src/utils',
+        },
+      },
+    ],
   ],
 };

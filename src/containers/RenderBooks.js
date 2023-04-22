@@ -1,10 +1,10 @@
 import { StyleSheet, View, Text } from 'react-native';
-import Book from '../components/Book';
-import useBooks from '../hooks/getBooks';
-import LoadingAnimation from '../components/Animation';
+import {LoadingAnimation, Book} from '@components';
+import {getBooks} from '@hooks';
+
 
 function RenderBooks() {
-  const [books, loading] = useBooks();
+  const [books, loading] = getBooks();
 
   if (loading) {
     return <LoadingAnimation />;

@@ -2,11 +2,8 @@ import * as React from 'react';
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Header } from './src/components/Texts';
-import { RootButton } from './src/components/Buttons';
-import Index from './src/screens/Index';
-import Intro from './src/screens/Intro';
-import Content from './src/screens/Content';
+import { RootButton, Header } from '@components';
+import { Main, Intro, Content } from '@screens';
 
 function HomeScreen({ navigation }) {
   const lorem = ' Welcome the game of choices! ';
@@ -35,10 +32,52 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Books" component={Index} />
-        <Stack.Screen name="Intro" component={Intro} />
-        <Stack.Screen name="Content" component={Content} />
+        <Stack.Screen
+          options={{
+            headerStyle: {
+              backgroundColor: '#1E1E1E',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+          name="Home"
+          component={HomeScreen}
+        />
+        <Stack.Screen
+          name="Books"
+          component={Main}
+          options={{
+            headerStyle: {
+              backgroundColor: '#1E1E1E',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
+        <Stack.Screen
+          name="Intro"
+          component={Intro}
+          options={{
+            headerStyle: {
+              backgroundColor: '#1E1E1E',
+            },
+            headerTintColor: '#fff',
+          }}
+        />
+        <Stack.Screen
+          name="Content"
+          component={Content}
+          options={{
+            headerStyle: {
+              backgroundColor: '#1E1E1E',
+            },
+            headerTintColor: '#fff',
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

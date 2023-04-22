@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Pressable } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { BookCoverName } from './Texts';
 import { useNavigation } from '@react-navigation/native';
+import { BookCoverName } from './Texts';
 
 function Book({ books }) {
   const navigation = useNavigation();

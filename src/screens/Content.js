@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import getContent from '../../src/hooks/getContent';
-import Content from '../containers/RenderContent';
-import LoadingAnimation from '../components/Animation';
+import { getContent } from '@hooks';
+import { RenderContent } from '@containers';
+import { LoadingAnimation } from '@components';
 
-const ContentDetails = () => {
+const Content = () => {
   const [loading, setLoading] = useState(true);
   const { contents, currentContentIndex, handleChoiceClick } = getContent();
   useEffect(() => {
@@ -19,7 +19,10 @@ const ContentDetails = () => {
 
   return (
     <View style={styles.container}>
-      <Content content={contents[currentContentIndex]} handleChoiceClick={handleChoiceClick} />
+      <RenderContent
+        content={contents[currentContentIndex]}
+        handleChoiceClick={handleChoiceClick}
+      />
       <View style={styles.containerFooter}></View>
     </View>
   );
@@ -38,4 +41,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ContentDetails;
+export default Content;
