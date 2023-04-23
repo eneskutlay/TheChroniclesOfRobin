@@ -1,10 +1,6 @@
 # Learn More About The Chronicles of Robin
 
-The Chronicles of Robin is a text-based mobile game developed with Expo and React Native. If you're interested in learning more about these technologies or improving your skills, we've compiled a list of resources to help you get started.
-
-## Expo
-
-- [Expo Documentation](https://docs.expo.dev/)
+The Chronicles of Robin is a text-based mobile game developed with React Native. If you're interested in learning more about these technologies or improving your skills, we've compiled a list of resources to help you get started.
 
 ## React Native
 
