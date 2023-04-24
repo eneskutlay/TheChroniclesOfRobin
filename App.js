@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RootButton, Header } from '@components';
-import { Main, Intro, Content } from '@screens';
+import { Main, Intro, Content, Options, Credits } from '@screens';
 
 function HomeScreen({ navigation }) {
   const lorem = ' Welcome the game of choices! ';
@@ -71,6 +71,26 @@ function App() {
         <Stack.Screen
           name="Content"
           component={Content}
+          options={{
+            headerStyle: {
+              backgroundColor: '#1E1E1E',
+            },
+            headerTintColor: '#fff',
+          }}
+        />
+        <Stack.Screen
+          name="Options"
+          component={Options}
+          options={{
+            headerStyle: {
+              backgroundColor: '#1E1E1E',
+            },
+            headerTintColor: '#fff',
+          }}
+        />
+        <Stack.Screen
+          name="Credits"
+          component={Credits}
           options={{
             headerStyle: {
               backgroundColor: '#1E1E1E',
