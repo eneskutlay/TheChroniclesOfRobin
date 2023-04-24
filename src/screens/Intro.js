@@ -45,7 +45,9 @@ const styles = StyleSheet.create({
   },
   introImage: {
     width: '100%',
-    height: 350,
+    height: '50%',
+    alignContent: 'center',
+    resizeMode: 'stretch',
   },
   introContainer: {
     flex: 3,

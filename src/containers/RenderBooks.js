@@ -1,7 +1,6 @@
 import { StyleSheet, View, Text } from 'react-native';
-import {LoadingAnimation, Book} from '@components';
-import {getBooks} from '@hooks';
-
+import { LoadingAnimation, Book } from '@components';
+import { getBooks } from '@hooks';
 
 function RenderBooks() {
   const [books, loading] = getBooks();

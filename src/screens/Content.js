@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { getContent } from '@hooks';
 import { RenderContent } from '@containers';
 import { LoadingAnimation } from '@components';
@@ -16,15 +16,15 @@ const Content = () => {
   if (loading) {
     return <LoadingAnimation />;
   }
-
+  //scrollview or view?
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <RenderContent
         content={contents[currentContentIndex]}
         handleChoiceClick={handleChoiceClick}
       />
       <View style={styles.containerFooter}></View>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#1E1E1E',
-    paddingTop: 200,
   },
   containerFooter: {
     marginVertical: 25,
