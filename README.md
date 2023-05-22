@@ -12,4 +12,4 @@ This project is licensed under the [MIT](https://github.com/eneskutlay/TheChroni
 
 
 ### Review the Project
-[![The Chronicles of Robin](https://media.giphy.com/media/UHE65jlKYRjNs6DPYE/giphy.gif)]
+![The Chronicles of Robin](https://media.giphy.com/media/UHE65jlKYRjNs6DPYE/giphy.gif)
