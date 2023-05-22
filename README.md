@@ -9,3 +9,7 @@ The Chronicles of Robin is a text-based mobile game developed with React Native.
 ### License
 
 This project is licensed under the [MIT](https://github.com/eneskutlay/TheChroniclesOfRobin/blob/main/LICENSE) License.
+
+
+### Review the Project
+[![The Chronicles of Robin](https://media.giphy.com/media/UHE65jlKYRjNs6DPYE/giphy.gif)]
