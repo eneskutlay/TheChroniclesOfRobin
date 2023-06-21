@@ -27,12 +27,12 @@ npm install
 <hr/>
 
 ### Basic API Structure
-![API Schema](https://res.cloudinary.com/thechroniclesofrobin/image/upload/v1687266357/apischema_idvaxl.png)
+![API Schema](https://res.cloudinary.com/eneskutlay/image/upload/v1687266357/apischema_idvaxl.png)
 
 <hr/>
 
 ### Screenshots
-![screenshoot](https://res.cloudinary.com/thechroniclesofrobin/image/upload/v1687269986/screenshoot_qcnbwp.png)
+![screenshoot](https://res.cloudinary.com/eneskutlay/image/upload/v1687269986/screenshoot_qcnbwp.png)
 
 
 ### License
